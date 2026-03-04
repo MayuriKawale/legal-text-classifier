@@ -3,6 +3,7 @@
 Fine-tuning DistilBERT on legal text classification using the ECtHR dataset from LexGLUE.
 
 ## Project Structure
+```
 
 legal-text-classifier/
 ├── src/
@@ -14,6 +15,7 @@ legal-text-classifier/
 ├── models/               # Saved model weights (gitignored)
 ├── main.py               # Entry point
 └── requirements.txt      # Dependencies
+```
 
 ## Setup
 
@@ -23,16 +25,22 @@ legal-text-classifier/
 
 ### Installation
 
-# Clone the repository
+**1. Clone the repository**
+```bash
 git clone https://github.com/MayuriKawale/legal-text-classifier.git
 cd legal-text-classifier
+```
 
-# Create and activate virtual environment
+**2. Create and activate virtual environment**
+```bash
 python -m venv legalbert-env
 source legalbert-env/Scripts/activate  # Windows Git Bash
+```
 
-# Install dependencies
+**3. Install dependencies**
+```bash
 pip install -r requirements.txt
+```
 
 ## Usage
 Coming soon.

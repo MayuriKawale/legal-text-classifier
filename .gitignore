@@ -1,0 +1,5 @@
+models/
+notebooks/.ipynb_checkpoints/
+legalbert-env/
+__pycache__/
+*.pt

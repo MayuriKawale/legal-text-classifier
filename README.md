@@ -279,3 +279,6 @@ Model evaluated on 1,000 held-out test cases after 3 epochs of fine-tuning.
 - [PyTorch](https://pytorch.org/)
 - [scikit-learn](https://scikit-learn.org/)
 - [pytest](https://docs.pytest.org/)
+
+### Learning Resources
+- [HuggingFace NLP Course](https://huggingface.co/learn/nlp-course/chapter1/1)

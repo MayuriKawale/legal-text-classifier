@@ -31,7 +31,7 @@ elif args.mode == "evaluate":
 elif args.mode == "inference":
     from src.inference import load_model_for_inference, predict_article_violated, format_predictions
     if args.text is None:
-        raise ValueError("In inference mode, please provide input text using the --text argument.")
+        parser.error("In inference mode, please provide input text using the --text argument.")
     else:
         model, tokenizer = load_model_for_inference(CONFIG)
         predictions = predict_article_violated(args.text, model, tokenizer, CONFIG)

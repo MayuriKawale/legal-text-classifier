@@ -31,7 +31,7 @@ def model():
     return load_model(CONFIG)
 
 @pytest.fixture(scope="module")
-def short_text_encoding(short_text, tokenizer):
+def short_text_encoding(tokenizer):
     return preprocess_for_inference(SHORT_TEXT, tokenizer, CONFIG)
 
 @pytest.fixture(scope="module")

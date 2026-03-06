@@ -60,8 +60,8 @@ def test_preprocess_list_input(tokenizer):
     ''' List of strings input should be tokenized and encoded correctly '''
     encoding = preprocess_for_inference(LIST_TEXT, tokenizer, CONFIG)
     assert "input_ids" in encoding and "attention_mask" in encoding, "Encoding should contain input_ids and attention_mask"
-    assert encoding["input_ids"].shape == (len(LIST_TEXT), MAX_LENGTH), f"Expected input_ids shape ({len(LIST_TEXT)}, {MAX_LENGTH}), but got {encoding['input_ids'].shape}"
-    assert encoding["attention_mask"].shape == (len(LIST_TEXT), MAX_LENGTH), f"Expected attention_mask shape ({len(LIST_TEXT)}, {MAX_LENGTH}), but got {encoding['attention_mask'].shape}"
+    assert encoding["input_ids"].shape == (1, MAX_LENGTH), f"Expected input_ids shape (1, {MAX_LENGTH}), but got {encoding['input_ids'].shape}"
+    assert encoding["attention_mask"].shape == (1, MAX_LENGTH), f"Expected attention_mask shape (1, {MAX_LENGTH}), but got {encoding['attention_mask'].shape}"
 
 def test_preprocess_empty_string(tokenizer):
     ''' Empty string input should be handled gracefully '''

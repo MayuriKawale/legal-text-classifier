@@ -4,3 +4,4 @@ legalbert-env/
 *__pycache__/
 *.pt
 .pytest_cache/
+gpu_models/

@@ -5,6 +5,7 @@ from src.train import CONFIG
 parser = argparse.ArgumentParser(description="Legal Text Classifier for ECtHR dataset") # create an instance of ArgumentParser to handle command-line arguments
 parser.add_argument("--mode", type=str, required=True, choices=["train", "evaluate", "inference"], help="Mode to run the script: train, evaluate, or inference") # add a required argument --mode
 parser.add_argument("--text", type=str, default=None, help="Input legal text for inference mode") # add an optional argument --text
+parser.add_argument("--debug", action="store_true", default=False, help="Run in debug mode: trains on 1 batch only to verify pipeline") # add an optional flag --debug for debug mode
 args = parser.parse_args() # parse the command-line arguments
 
 #------- Actions based on the mode argument -------
@@ -13,7 +14,7 @@ if args.mode == "train":
     from transformers import DistilBertTokenizer
     train_loader, val_loader, test_loader = load_data(CONFIG) 
     model = load_model(CONFIG)
-    model = train(model, train_loader, val_loader, CONFIG)
+    model = train(model, train_loader, val_loader, CONFIG, debug=args.debug)
     tokenizer = DistilBertTokenizer.from_pretrained(CONFIG["model_name"])
     save_model(model, tokenizer, CONFIG)
 

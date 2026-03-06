@@ -95,7 +95,7 @@ def load_model(config):
     return model 
 
 # ---------- Training and Validation ---------
-def train(model, train_loader, val_loader, config):
+def train(model, train_loader, val_loader, config, debug=False):
     # Set the device to GPU if available, otherwise use CPU
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f'Used device: {device}')
@@ -112,9 +112,14 @@ def train(model, train_loader, val_loader, config):
 
         # Training phase
         model.train()  # Set the model to training mode
-        total_loss = 0.0  # Initialize total loss for the epoch
+        total_train_loss = 0.0  # Initialize total loss for the epoch
 
         for batch_idx, batch in enumerate(train_loader):
+            # Check debug mode first before any computation - for 1 batch only
+            if debug and batch_idx == 1:
+                print("Debug mode: stopping after 1 batch")
+                return model
+
             # Move batch data to the specified device (GPU or CPU)
             input_ids = batch["input_ids"].to(device)  # Move input IDs to the specified device
             attention_mask = batch["attention_mask"].to(device)  # Move attention mask to the specified device

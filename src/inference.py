@@ -71,11 +71,6 @@ def predict_article_violated(text, model, tokenizer, config):
     # apply sigmoid to get probabilities
     probs = torch.sigmoid(outputs.logits).squeeze(0)  # shape: (num_labels,)
 
-    # Debug — print all probabilities regardless of threshold
-    print("\nDebug — All article probabilities:")
-    for i, (label, prob) in enumerate(zip(LABEL_NAMES, probs)):
-        print(f"  Article {label:>4}: {prob.item():.4f}")
-
     # Apply threshold to get binary predictions
     results = {}
     for i, (label, prob) in enumerate(zip(LABEL_NAMES, probs)):

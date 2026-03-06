@@ -15,6 +15,7 @@ from src.train import ECtHRDataset, load_model, CONFIG
 # Each of these fixtures is initialized once per test module, allowing us to reuse the same tokenizer and dataset across multiple 
 # tests without reloading them each time.
 
+#------------ Fixtures for testing -------------
 @pytest.fixture(scope="module")
 def tokenizer():
     return DistilBertTokenizer.from_pretrained(CONFIG["model_name"])
@@ -29,7 +30,7 @@ def raw_dataset():
 def train_dataset(raw_dataset, tokenizer):
     return ECtHRDataset(raw_dataset['train'], tokenizer, CONFIG)
 
-
+#------------ Test cases for the training pipeline -------------
 def test_dataset_length(train_dataset):
     """Dataset should have 9000 training examples."""
     assert len(train_dataset) == 9000

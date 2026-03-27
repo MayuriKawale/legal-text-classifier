@@ -44,10 +44,10 @@ rewards models for simply predicting the majority class.
 $$\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}$$
 
 Where:
-- **TP** = True Positives — correctly predicted violations
-- **TN** = True Negatives — correctly predicted non-violations
-- **FP** = False Positives — predicted violation when there was none
-- **FN** = False Negatives — missed an actual violation
+- **TP** = True Positives - correctly predicted violations
+- **TN** = True Negatives - correctly predicted non-violations
+- **FP** = False Positives - predicted violation when there was none
+- **FN** = False Negatives - missed an actual violation
 
 ---
 
@@ -119,7 +119,7 @@ during exploratory data analysis.
 
 ---
 
-## False Positive vs False Negative — Which Is More Harmful?
+## False Positive vs False Negative: Which Is More Harmful?
 
 In this legal context, a **false negative** means missing a real violation, this is 
 more harmful than a **false positive** which incorrectly flagging a violation.

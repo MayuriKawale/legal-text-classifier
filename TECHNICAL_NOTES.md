@@ -114,7 +114,7 @@ Where $w_i$ is the number of true instances for label $i$.
 - It is the standard metric for multi-label classification benchmarks
 
 The gap between Micro F1 (0.6393) and Macro F1 (0.5054) in this project 
-confirms that the model struggles with rare labels — exactly as predicted 
+confirms that the model struggles with rare labels, exactly as predicted 
 during exploratory data analysis.
 
 ---
